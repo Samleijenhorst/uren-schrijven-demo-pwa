@@ -1,37 +1,34 @@
 <?xml version="1.0"?>
-<mvc:View xmlns="sap.m" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" controllerName="com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.App">
+<mvc:View xmlns="sap.m" displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Master">
 	<Page title="Master">
 		<content>
-			<Table id="idProductsTable" items="{todo>/}">
-				<infoToolbar>
-					<Toolbar active="ture">
-						<Label text="Activiteiten"/>
-					</Toolbar>
-				</infoToolbar>
-				<columns>
-					<Column width="12em">
-						<Text text="Taak"/>
-					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true">
-						<Text text="Omschrijving"/>
-					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true">
-						<Text text="Status"/>
-					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true">
-					</Column>
-				</columns>
-				<items>
-					<ColumnListItem press="onPress">
-						<cells>
-							<Text text="{todo>title}"/>
-							<Text text="{todo>description}"/>
-							<CheckBox selected="{todo>done}"/>
-							<Button text="Details" press="onPress" />
-						</cells>
-					</ColumnListItem>
-				</items>
-			</Table>
+			<List id="idProductsTable" headerText="Uren" items="{todo>/}">
+				<CustomListItem press="onPress">
+					<HBox>
+						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+							<Select id="Customer" name="Customer" autoAdjustWidth="true">
+								<core:Item key="Alliander" text="Alliander"/>
+								<core:Item key="Sanoma" text="Sanoma"/>
+								<core:Item key="Vebego" text="Vebego"/>
+							</Select>
+							<Select id="Project" name="Project" autoAdjustWidth="true">
+								<core:Item key="Upgrade" text="Upgrade"/>
+								<core:Item key="Development" text="Development"/>
+								<core:Item key="Support" text="Support"/>
+							</Select>
+							<TimePicker id="TP1" value="8:00" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"/>
+						</VBox>
+					</HBox>
+				</CustomListItem>
+			</List>
 		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://add" press="onAdd"/>
+				<Button icon="sap-icon://save" press="onSubmit"/>
+			</Toolbar>
+		</footer>
 	</Page>
 </mvc:View>

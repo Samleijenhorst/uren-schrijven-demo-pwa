@@ -3,11 +3,18 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.App", {
+	return Controller.extend("com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Master", {
 		onInit: function () {
 		},
-		onPress: function () {
-			this.getRouter().navTo("Detail")
+		onPress: function (oEvent) {
+			this.getOwnerComponent().getRouter().navTo("Detail", 
+				{Item: oEvent.getSource().getBindingContext("todo").sPath.split("/").pop()});
+		},
+		onAdd: function (oEvent) {
+			this.getView().getModel("todo").addItem("newEntry", {Customer: "", Project: "", Time: "8:00"});
+		},
+		onRemove: function (oEvent){
+			
 		}
 	});
 });

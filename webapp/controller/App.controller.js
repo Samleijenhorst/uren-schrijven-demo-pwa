@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Master", {
+	return Controller.extend("com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.App", {
 		onInit: function () {
 		},
 		onPress: function (oEvent) {

@@ -1,4 +1,4 @@
-var version = "0.0.18";
+var version = "0.0.19";
 
 var RESOURCES_TO_PRELOAD = [
 	"index.html",
@@ -40,7 +40,7 @@ RESOURCES_TO_PRELOAD = RESOURCES_TO_PRELOAD.concat([
 	'../resources/sap/ui/layout/themes/sap_belize/library.css'
 ]);
 
-var CACHE_NAME = "PWA-TODO-APP-" + version;
+var CACHE_NAME = "PWA-UREN-SCHRIJVEN-APP-" + version;
 self.addEventListener('install', function (event) {
 	event.waitUntil(
 		caches.open(CACHE_NAME)
