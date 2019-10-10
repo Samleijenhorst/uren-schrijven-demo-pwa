@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<u:Menu itemSelect="handleMenuItemPress">
+		<u:MenuItem id="MonthButton" text="Maandoverzicht" icon="sap-icon://appointment" />
+		<u:MenuItem id="WeekButton" text="Weekoverzicht" icon="sap-icon://appointment-2" />
+	</u:Menu>
+</core:FragmentDefinition>

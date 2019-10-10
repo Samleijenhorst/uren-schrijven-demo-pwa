@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<mvc:View xmlns="sap.m" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Month">
+	<Page title="Weekoverzicht" showNavButton="true" navButtonPress="onBack" busyIndicatorDelay="0">
+	</Page>
+</mvc:View>

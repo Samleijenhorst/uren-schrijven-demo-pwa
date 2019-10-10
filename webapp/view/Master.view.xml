@@ -1,18 +1,32 @@
 <?xml version="1.0"?>
 <mvc:View xmlns="sap.m" displayBlock="true" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
 	controllerName="com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Master">
-	<Page title="Master">
+	<Page title="Uren">
 		<content>
-			<List id="idProductsTable" headerText="Uren" items="{todo>/}">
+			<Toolbar id="HeaderToolbar">
+				<Button icon="sap-icon://navigation-left-arrow" type="Transparent" />
+				<ToolbarSpacer/>
+				<Text text="10 Oktober 2019"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://navigation-right-arrow" type="Transparent" />
+			</Toolbar>
+			<List id="idProductsTable" showHeader="false" items="{todo>/}">
 				<CustomListItem press="onPress">
+					<Toolbar>
+						<Text text="{todo>customer}"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://map-2" type="Transparent" press="onLocationSelect"/>
+						<Button icon="sap-icon://delete" type="Transparent" press="onRemove"/>
+						<Button icon="sap-icon://navigation-up-arrow" type="Transparent" press="onCollapse"/>
+					</Toolbar>
 					<HBox>
 						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
-							<Select id="Customer" name="Customer" autoAdjustWidth="true">
+							<Select id="Customer" name="Customer" autoAdjustWidth="true" selectedKey="{todo>customer}">
 								<core:Item key="Alliander" text="Alliander"/>
 								<core:Item key="Sanoma" text="Sanoma"/>
 								<core:Item key="Vebego" text="Vebego"/>
 							</Select>
-							<Select id="Project" name="Project" autoAdjustWidth="true">
+							<Select id="Project" name="Project" autoAdjustWidth="true" selectedKey="{todo>project}">
 								<core:Item key="Upgrade" text="Upgrade"/>
 								<core:Item key="Development" text="Development"/>
 								<core:Item key="Support" text="Support"/>
@@ -25,6 +39,7 @@
 		</content>
 		<footer>
 			<Toolbar>
+				<Button id="openMenu" icon="sap-icon://menu" press="handlePressOpenMenu" />
 				<ToolbarSpacer/>
 				<Button icon="sap-icon://add" press="onAdd"/>
 				<Button icon="sap-icon://save" press="onSubmit"/>

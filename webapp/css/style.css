@@ -1,1 +1,17 @@
 /* Enter your custom styles here */
+header {
+	background-color: #FF8000;
+}
+#__page0-intHeader {
+	background-color: #FF8000;
+}
+#container-uren-schrijven-demo-pwa---Master--HeaderToolbar{
+	background-color: #000000;
+	color: #FF8000;
+}
+#__page0-cont {
+    background-image: url('../image/background_login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

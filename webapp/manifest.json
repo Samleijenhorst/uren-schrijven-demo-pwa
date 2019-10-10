@@ -129,9 +129,16 @@
 				},
 				{
 					"name": "Detail",
-					"pattern": "/{Item}",
+					"pattern": "Detail",
 					"target": [
 						"Detail"
+					]
+				},
+				{
+					"name": "Month",
+					"pattern": "Month",
+					"target": [
+						"Month"
 					]
 				}
 			],
@@ -149,6 +156,13 @@
 					"clearControlAggregation": false,
 					"viewId": "Detail",
 					"viewName": "Detail"
+				},
+				"Month": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "Month",
+					"viewName": "Month"
 				}
 			}
 		}

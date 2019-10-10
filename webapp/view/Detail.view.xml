@@ -1,21 +1,5 @@
 <?xml version="1.0"?>
 <mvc:View xmlns="sap.m" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Detail">
-	<Page title="Detail" showNavButton="true" navButtonPress="onBack" busyIndicatorDelay="0">
-		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="Details">
-			<f:content>
-				<Label text="Titel" />
-				<Input value="{todo>title}" change="onChangeTitle"/>
-				
-				<Label text="Voltooid" />
-				<CheckBox selected="{todo>done}" select="onCheckItem"/>
-				
-				<Label text="Omschrijving" />
-				<TextArea value="{todo>description}" change="onChangeDescription"/>
-				
-				<Label></Label>
-				<Button text="Save" press="onBack" visible="false"/>
-				<Button text="Delete" press="onDelete" type="Reject" visible="false"/>
-			</f:content>
-		</f:SimpleForm>
+	<Page title="Weekoverzicht" showNavButton="true" navButtonPress="onBack" busyIndicatorDelay="0">
 	</Page>
 </mvc:View>
