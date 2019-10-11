@@ -1,5 +1,9 @@
 /* Enter your custom styles here */
 
+.sapMShellBrandingBar {
+    background-color: transparent;
+}
+
 header {
     background-color: #FF8000;
     color: #FFFFFF;
@@ -20,6 +24,19 @@ header {
 #container-uren-schrijven-demo-pwa---Master--HeaderToolbar {
     background-color: #000000;
     color: #FF8000;
+}
+
+ul#container-uren-schrijven-demo-pwa---Master--idProductsTable-listUl {
+    background: transparent;
+}
+
+ul#container-uren-schrijven-demo-pwa---Master--idProductsTable-listUl li {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 15px 5px;
+}
+
+ul#container-uren-schrijven-demo-pwa---Master--idProductsTable-listUl li .sapMIBar {
+    background: rgba(255, 128, 0, 0.3);
 }
 
 #__page0-cont {
