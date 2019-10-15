@@ -1,0 +1,33 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ResponsivePopover title="{Name}" class="sapUiPopupWithPadding" placement="Bottom">
+		<content>
+			<VBox alignItems="Center" justifyContent="Center">
+				<Image src="image/ProfielSam.png" width="15em"/>
+				<Text text="Profiel: Sam Leijenhorst"/>
+				<Text text=" "/>
+				<Text text=" "/>
+				<Label text="Achievements"/>
+				<HBox>
+					<VBox alignItems="Center" justifyContent="Center">
+						<Image src="image/Ach1.png"/>
+						<Label text="Rampage"/>
+					</VBox>
+					<VBox alignItems="Center" justifyContent="Center">
+						<Image src="image/Ach2.png"/>
+						<Label text="Unstoppable"/>
+					</VBox>
+				</HBox>
+				<HBox>
+					<VBox alignItems="Center" justifyContent="Center">
+						<Image src="image/Ach3.png"/>
+						<Label text="Legend"/>
+					</VBox>
+					<VBox alignItems="Center" justifyContent="Center">
+						<Image src="image/Ach4.png"/>
+						<Label text="Overlord"/>
+					</VBox>
+				</HBox>
+			</VBox>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

@@ -1,11 +1,12 @@
 {
   "name": "uren-schrijven-demo-pwa",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "private": true,
   "devDependencies": {
     "@ui5/cli": "1.4.3",
-    "@sap/ui5-builder-webide-extension": "1.0.2"
+    "@sap/ui5-builder-webide-extension": "1.0.2",
+    "vscode-uri": "1.0.6"
   },
   "scripts": {
     "build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo"

@@ -1,0 +1,17 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ResponsivePopover
+		title="{Name}"
+		class="sapUiPopupWithPadding"
+		placement="Bottom" >
+		<content>
+			<VBox>
+			<Label text="Dark Mode"/>
+			<Switch />
+			<Label text="Reminders"/>
+			<Switch />
+			</VBox>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

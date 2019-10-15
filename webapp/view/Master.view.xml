@@ -4,34 +4,34 @@
 	<Page title="Uren">
 		<content>
 			<Toolbar id="HeaderToolbar">
-				<Button icon="sap-icon://navigation-left-arrow" type="Transparent" />
+				<Button icon="sap-icon://navigation-left-arrow" type="Transparent"/>
 				<ToolbarSpacer/>
-				<Text text="10 Oktober 2019"/>
+				<Text text="15 Oktober 2019"/>
 				<ToolbarSpacer/>
-				<Button icon="sap-icon://navigation-right-arrow" type="Transparent" />
+				<Button icon="sap-icon://navigation-right-arrow" type="Transparent"/>
 			</Toolbar>
-			<List id="idProductsTable" showHeader="false" items="{todo>/}">
+			<List id="idProductsTable" items="{todo>/}">
 				<CustomListItem press="onPress">
 					<Toolbar>
-						<Text text="{todo>customer}"/>
+						<Text text="{todo>description/Customer} - {todo>description/Time}"/>
 						<ToolbarSpacer/>
-						<Button icon="sap-icon://map-2" type="Transparent" press="onLocationSelect"/>
 						<Button icon="sap-icon://delete" type="Transparent" press="onRemove"/>
 						<Button icon="sap-icon://navigation-up-arrow" type="Transparent" press="onCollapse"/>
 					</Toolbar>
 					<HBox>
 						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
-							<Select id="Customer" name="Customer" autoAdjustWidth="true" selectedKey="{todo>customer}">
+							<Select id="Customer" name="Customer" autoAdjustWidth="true" selectedKey="{todo>description/Customer}">
 								<core:Item key="Alliander" text="Alliander"/>
 								<core:Item key="Sanoma" text="Sanoma"/>
 								<core:Item key="Vebego" text="Vebego"/>
 							</Select>
-							<Select id="Project" name="Project" autoAdjustWidth="true" selectedKey="{todo>project}">
+							<Select id="Project" name="Project" autoAdjustWidth="true" selectedKey="{todo>description/Project}">
 								<core:Item key="Upgrade" text="Upgrade"/>
 								<core:Item key="Development" text="Development"/>
 								<core:Item key="Support" text="Support"/>
 							</Select>
-							<TimePicker id="TP1" value="8:00" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"/>
+							<TimePicker id="TP1" valueFormat="HH:mm" displayFormat="HH:mm" change="handleChange" placeholder="Enter meeting start time"
+								value="{todo>description/Time}"/>
 						</VBox>
 					</HBox>
 				</CustomListItem>
@@ -39,7 +39,7 @@
 		</content>
 		<footer>
 			<Toolbar>
-				<Button id="openMenu" icon="sap-icon://menu" press="handlePressOpenMenu" />
+				<Button id="openMenu" icon="sap-icon://menu" press="handlePressOpenMenu"/>
 				<ToolbarSpacer/>
 				<Button icon="sap-icon://add" press="onAdd"/>
 				<Button icon="sap-icon://save" press="onSubmit"/>

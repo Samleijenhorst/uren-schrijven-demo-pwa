@@ -1,11 +1,13 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"
-], function (Controller, MessageToast) {
+	"sap/m/MessageToast",
+	'sap/ui/core/Fragment',
+], function (Controller, MessageToast, Fragment) {
 	"use strict";
 
 	return Controller.extend("com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Master", {
 		onInit: function () {},
+		onAfterRendering: function () {},
 		onPress: function (oEvent) {
 			this.getOwnerComponent().getRouter().navTo("Detail", {
 				Item: oEvent.getSource().getBindingContext("todo").sPath.split("/").pop()
@@ -17,7 +19,7 @@ sap.ui.define([
 				oLongitude = oCoords.coords.longitude;
 				var sCustomer = oLongitude > 0 ? "Alliander" : "Vebego";
 				this.getView().getModel("todo").addItem("newEntry", {
-					Customer: "Alliander",
+					Customer: sCustomer,
 					Project: "Development",
 					Time: "8:00"
 				});
@@ -55,13 +57,47 @@ sap.ui.define([
 			MessageToast.show("Uren zijn ingediend");
 		},
 
-		handleMenuItemPress: function(oEvent) {
-			switch (oEvent.getParameter("item").getId()){
-			case "MonthButton": 
+		handleMenuItemPress: function (oEvent) {
+			switch (oEvent.getParameter("item").getId()) {
+			case "MonthButton":
 				this.getOwnerComponent().getRouter().navTo("Month");
 				break;
-			case "WeekButton": 
+			case "WeekButton":
 				this.getOwnerComponent().getRouter().navTo("Detail");
+				break;
+			case "Settings":
+				var oButton = oEvent.getSource();
+				if (!this._settings) {
+					Fragment.load({
+						name: "com.alliander.todo.demo.uren-schrijven-demo-pwa.fragments.Settings",
+						controller: this
+					}).then(function (oPopover) {
+						this._settings = oPopover;
+						this.getView().addDependent(this._settings);
+						this._settings.openBy(oButton);
+					}.bind(this));
+				} else {
+					this._settings.openBy(oButton);
+				}
+				break;
+
+			case "Profiel":
+				var oProfileButton = oEvent.getSource();
+				if (!this._profile) {
+					Fragment.load({
+						name: "com.alliander.todo.demo.uren-schrijven-demo-pwa.fragments.Profile",
+						controller: this
+					}).then(function (oPopoverSettings) {
+						this._profile = oPopoverSettings;
+						this.getView().addDependent(this._profile);
+						this._profile.openBy(oProfileButton);
+					}.bind(this));
+				} else {
+					this._profile.openBy(oProfileButton);
+				}
+				break;
+			case "Logout":
+				MessageToast.show("Gebruiker Sam Leijenhorst uitgelogd");
 				break;
 			}
 		},

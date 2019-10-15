@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <mvc:View xmlns="sap.m" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" controllerName="com.alliander.todo.demo.uren-schrijven-demo-pwa.controller.Detail">
 	<Page title="Weekoverzicht" showNavButton="true" navButtonPress="onBack" busyIndicatorDelay="0">
+		<content>
+			<VBox>
+			<SinglePlanningCalendar id ="weekView" fullDay="false" startHour="08:00">
+				<views>
+				<SinglePlanningCalendarWeekView key="WeekView" title="Week" />
+				<SinglePlanningCalendarMonthView key="MonthView" title="Month" />
+				</views>
+			</SinglePlanningCalendar>
+			</VBox>
+		</content>
 	</Page>
 </mvc:View>
